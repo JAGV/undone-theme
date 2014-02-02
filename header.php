@@ -51,7 +51,7 @@
 
                     <div class="Search">
                         <?php get_search_form(); ?>
-                        <button id="js-APlayer-trigger">Audio Player</button>
+                        <button id="js-APlayer-trigger" class="Player-trigger">Undone Player</button>
                     </div><!-- .Search -->
 
                 </div><!-- .Grid-cell -->

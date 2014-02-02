@@ -129,7 +129,6 @@ body { font-size: 1em; font-family: "Georgia", "Times New Roman", "Times", serif
 
 a { color: black; text-decoration: none; }
 a:hover { color: #a6a6a6; }
-a:visited { color: #e5e5e5; }
 
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 
@@ -141,28 +140,50 @@ fieldset { border: 0; margin: 0; padding: 0; }
 
 textarea { resize: vertical; }
 
-input[type="text"] { box-sizing: border-box; max-width: 100%; }
+input[type="text"], input[type="search"] { margin: 0; box-sizing: border-box; max-width: 100%; border: 0; }
+
+input[type="search"]:focus { outline: 0; }
 
 button { -webkit-appearance: none; -moz-appearance: none; border: 0; background-color: transparent; }
 button:focus { outline: 2px solid #e5e5e5; }
 
-h1, h2, h3, h4, h5, h6 { margin-top: 0; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
-h1, .alpha { font-size: 2em; line-height: 1.1; }
+h1, .h1 { font-size: 2em; line-height: 1.1; }
 
-h2, .beta { font-size: 1.5em; }
+h2, .h2 { font-size: 1.5em; line-height: 1.1; }
 
-h3, .gamma { font-size: 1.17em; }
+h3, .h3 { font-size: 1.17em; }
 
-h4, .delta { font-size: 1em; }
+h4, .h4 { font-size: 1em; }
 
-h5, .epsilon { font-size: 0.83em; }
+h5, .h5 { font-size: 0.83em; }
 
-h6, .zeta { font-size: 0.67em; }
+h6, .h6 { font-size: 0.67em; }
 
-blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
-.timestamp { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+.timestamp { font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
+
+@font-face { font-family: 'undone'; src: url("assets/icons/undone.eot?-18rcmg"); src: url("assets/icons/undone.eot?#iefix-18rcmg") format("embedded-opentype"), url("assets/icons/undone.woff?-18rcmg") format("woff"), url("assets/icons/undone.ttf?-18rcmg") format("truetype"), url("assets/icons/undone.svg?-18rcmg#undone") format("svg"); font-weight: normal; font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] { font-family: 'undone'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.icon-seek-right:before { content: "\e600"; }
+
+.icon-seek-left:before { content: "\e601"; }
+
+.icon-see-more:before { content: "\e602"; }
+
+.icon-search:before { content: "\e603"; }
+
+.icon-play:before { content: "\e604"; }
+
+.icon-pause:before { content: "\e605"; }
+
+.icon-arrow:before { content: "\e606"; }
+
+.icon-arrow-rev:before { content: "\e607"; }
 
 /* Grid setup */
 .Grid { font-size: 0; margin: 0; padding: 0; }
@@ -202,7 +223,7 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .u-size4of5 { width: 80%; }
 
-.Nav { list-style: none; padding-left: 0; }
+.Nav { list-style: none; padding-left: 0; font-size: 0.875em; }
 
 .Nav > li { display: inline-block; margin-left: 1em; }
 .Nav > li:first-child { margin-left: 0; }
@@ -217,7 +238,7 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .Content--main { box-sizing: border-box; padding: 1.5em; margin-bottom: 2em; background-color: white; }
 
-.Header { padding-top: 2.5em; padding-bottom: 2em; background-color: #fff; width: 100%; }
+.Header { padding-top: 2.5em; padding-bottom: 2em; background-color: #fff; width: 100%; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
 @media only screen and (min-width: 38em) { .Header.is-fixed { position: fixed; z-index: 99; } }
 .Footer { padding-bottom: 4em; }
@@ -235,19 +256,39 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .APlayer.is-hidden { overflow: hidden; max-height: 0; }
 
-.jp-controls { margin-left: 0; padding-left: 0; list-style: none; }
+.Player-trigger { outline: 1px solid #e5e5e5; }
 
-.jp-controls > li { display: inline-block; padding: 0.5em; border: 1px solid; }
+.jp-audio { border: 1px solid #e5e5e5; padding: 0.25em; margin: 1em 1em 0; }
 
-.jp-progress { background-color: #000; height: 0.5em; }
+.jp-controls { margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 0; list-style: none; font-size: 2em; text-align: center; }
 
-.jp-play-bar { background-color: #e5e5e5; height: 0.5em; }
+.jp-controls > li { display: inline-block; }
+
+.jp-controls > li button { color: #e5e5e5; transition: color 0.5s; }
+
+.jp-controls > li button:hover { color: #000; }
+
+.jp-controls > li button:focus { color: #999; outline: none; }
+
+.jp-play { width: 2em; padding-left: 0.5em; }
+
+.jp-pause { width: 2em; padding-right: 0.5em; }
+
+.jp-progress { background-color: #e5e5e5; height: 0.5em; margin: 0.25em 3.25em 0; }
+
+.jp-play-bar { position: relative; height: 0.5em; }
+
+.jp-play-bar:before { content: ''; width: 0.25em; height: 0.75em; position: absolute; right: -0.25em; top: -0.15em; background-color: red; }
+
+.jp-progress:hover { cursor: pointer; }
 
 .jp-volume-bar { background-color: #e5e5e5; height: 0.5em; width: 40%; }
 
 .jp-volume-bar-value { background-color: #999; height: 0.5em; }
 
-.jp-time-holder { overflow: hidden; }
+.jp-time-holder { margin-bottom: -1.35em; overflow: hidden; }
+
+.jp-current-time, .jp-duration { width: 3em; text-align: center; }
 
 .jp-current-time { float: left; }
 
@@ -255,11 +296,13 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .jp-toggles { padding-left: 0; list-style: none; }
 
-.jp-playlist { background-color: #e5e5e5; padding: 1em 1em 2em; }
+.jp-playlist { font-size: 0.875em; }
 
 .jp-playlist ul { margin: 0; padding-left: 0; list-style: none; }
 
-.jp-playlist ul > li { padding-top: 0.5em; padding-bottom: 0.5em; border-bottom: 1px solid; }
+.jp-playlist ul > li { padding: 0.25em; border-bottom: 1px solid #f5f5f5; }
+
+.jp-playlist ul > li:nth-child(2n) { background-color: #fafcf7; }
 
 .Posts { list-style: none; padding-left: 0; margin: 0; }
 
@@ -267,9 +310,17 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .Posts-post--featured { text-align: center; }
 
-.Posts-post-title { margin-bottom: 0; }
+.Posts-post-title { margin-top: 1em; margin-bottom: 0.5em; }
 
 .sticky { text-align: center; }
+
+.sticky .Post-meta { text-align: center; }
+
+.Post-play { padding: 0; }
+
+.Post-play:focus { outline: 0; }
+
+.Post-meta { text-align: right; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }

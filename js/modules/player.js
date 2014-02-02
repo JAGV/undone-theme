@@ -21,7 +21,8 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
                         id: i.id,
                         title: i.title,
                         artist: i.custom_fields.artist,
-                        mp3: i.song_mp3
+                        mp3: i.song_mp3,
+                        poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
                     });
                 }
             }, songPosts);
@@ -48,6 +49,13 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
             $.publish("playSong", [id]);
         },
 
+        pausePost: function() {
+            var $this = $(this),
+                id = $this.data('id');
+
+            $.publish("pauseSong", [id]);
+        },
+
         init: function(config) {
 
             // Create an internal reference to this
@@ -67,13 +75,22 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
             });
 
             $.getJSON(_this.config.jsonURL, _this.createSonglist);
-            $.subscribe("playlistMade", function(u, obj) {
-                _.each(obj, function(i) { _this.undonePlaylist.add(i); });
-            });
+
+            _this.config.$body.on('click', '.js-playPost', _this.playPost);
+            _this.config.$body.on('click', '.js-pausePost', _this.pausePost);
+
             $.subscribe("playSong", function(u, id) {
                 _this.undonePlaylist.play(_this.findSong(id));
             });
-            _this.config.$body.on('click', '.js-playPost', _this.playPost);
+
+            $.subscribe("pauseSong", function(u, id) {
+                _this.undonePlaylist.pause(_this.findSong(id));
+            });
+
+            $.subscribe("playlistMade", function(u, obj) {
+                _.each(obj, function(i) { _this.undonePlaylist.add(i); });
+            });
+
         }
     };
 });

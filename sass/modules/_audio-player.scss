@@ -3,26 +3,76 @@
     max-height: 0;
 }
 
+.Player-trigger {
+    outline: 1px solid #e5e5e5;
+}
+
+.jp-audio {
+    border: 1px solid #e5e5e5;
+    padding: 0.25em;
+    margin: 1em 1em 0;
+}
+
 .jp-controls {
-    margin-left: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     padding-left: 0;
     list-style: none;
+    font-size: 2em;
+    text-align: center;
 }
 
 .jp-controls > li {
     display: inline-block;
-    padding: 0.5em;
-    border: 1px solid;
+}
+
+.jp-controls > li button {
+    color: #e5e5e5;
+    transition: color 0.5s;
+}
+
+.jp-controls > li button:hover {
+    color: #000;
+}
+
+.jp-controls > li button:focus {
+    color: #999;
+    outline: none;
+}
+
+.jp-play {
+    width: 2em;
+    padding-left: 0.5em;
+}
+
+.jp-pause {
+    width: 2em;
+    padding-right: 0.5em;
 }
 
 .jp-progress {
-    background-color: #000;
+    background-color: #e5e5e5;
     height: 0.5em;
+    margin: 0.25em 3.25em 0;
 }
 
 .jp-play-bar {
-    background-color: #e5e5e5;
+    position: relative;
     height: 0.5em;
+}
+
+.jp-play-bar:before {
+    content: '';
+    width: 0.25em;
+    height: 0.75em;
+    position: absolute;
+    right: -0.25em;
+    top: -0.15em;
+    background-color: red;
+}
+
+.jp-progress:hover {
+    cursor: pointer;
 }
 
 .jp-volume-bar {
@@ -37,7 +87,14 @@
 }
 
 .jp-time-holder {
+    margin-bottom: -1.35em;
     overflow: hidden;
+}
+
+.jp-current-time,
+.jp-duration {
+    width: 3em;
+    text-align: center;
 }
 
 .jp-current-time {
@@ -54,8 +111,7 @@
 }
 
 .jp-playlist {
-    background-color: #e5e5e5;
-    padding: 1em 1em 2em;
+    font-size: 0.875em;
 }
 
 .jp-playlist ul {
@@ -65,7 +121,10 @@
 }
 
 .jp-playlist ul > li {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid;
+    padding: 0.25em;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.jp-playlist ul > li:nth-child(2n) {
+    background-color: #fafcf7;
 }

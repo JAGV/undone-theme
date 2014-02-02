@@ -4,7 +4,6 @@ if (typeof jQuery === 'function') {
 
 require.config({
     paths: {
-        //"jquery": "../bower_components/jquery/jquery",
         "jquery.jplayer": "../bower_components/jplayer/jquery.jplayer/jquery.jplayer",
         "jquery.jplayerplaylist": "../bower_components/jplayer/add-on/jplayer.playlist",
         "lodash": "../bower_components/lodash/dist/lodash",
@@ -33,10 +32,3 @@ require(["player", "fade-logo", "toggle-player"], function(player, fadeLogo, tog
     player.init();
 
 });
-
-
-//var Undone = Undone || {};
-
-//Undone.togglePlayer.init();
-//Undone.fadeLogo.init();
-//Undone.player.init();

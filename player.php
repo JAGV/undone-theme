@@ -1,58 +1,81 @@
-<div class="APlayer  is-hidden" id="js-PlayerDrawer">
+<div class="APlayer  is-hidden" id="js-PlayerDrawer"><!--  -->
 
-    <div id="js-APlayer"></div>
+    <div id="js-APlayer" class="jp-player"></div>
 
     <div id="js-APlayer-container" class="jp-audio">
 
         <div class="jp-type-single">
 
-            <div class="jp-gui  jp-interface">
+            <div class="Grid  Grid--gutters  v1-Grid--2col">
 
-                <ul class="jp-controls">
-                    <li><a href="javascript:;" class="jp-play" tabindex="1">Play</a></li>
-                    <li><a href="javascript:;" class="jp-pause" tabindex="1">Pause</a></li>
-                    <li><a href="javascript:;" class="jp-stop" tabindex="1">Stop</a></li>
-                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">Mute</a></li>
-                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">Unmute</a></li>
-                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">Max Volume</a></li>
-                </ul><!-- jp-controls -->
+                <div class="Grid-cell">
 
-                <div class="jp-progress">
-                    <div class="jp-seek-bar">
-                        <div class="jp-play-bar"></div>
-                    </div><!-- .jp-seek-bar -->
-                </div><!-- .jp-progress -->
+                    <div class="jp-gui  jp-interface">
 
-                <div class="jp-volume-bar">
-                    <div class="jp-volume-bar-value"></div>
-                </div><!-- .jp-volume-bar -->
+                        <div class="jp-time-holder">
+                            <div class="jp-current-time"></div>
+                            <div class="jp-duration"></div>                    
+                        </div><!-- .jp-time-holder -->
 
-                <div class="jp-time-holder">
-                    <div class="jp-current-time"></div>
-                    <div class="jp-duration"></div>                    
-                </div><!-- .jp-time-holder -->
+                        <div class="jp-progress">
+                            <div class="jp-seek-bar">
+                                <div class="jp-play-bar"></div>
+                            </div><!-- .jp-seek-bar -->
+                        </div><!-- .jp-progress -->
 
-                <ul class="jp-toggles">
-                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">Repeat</a></li>
-                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">Repeat Off</a></li>
-                </ul><!-- .jp-toggles -->
+                        <!-- this is also not in the design
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div> .jp-volume-bar -->
 
-            </div><!-- .jp-gui -->
+                        <ul class="jp-controls">
+                            <li><button class="jp-previous"><span class="icon-seek-left"></span><span class="visuallyhidden">Previous</span></button></li>
+                            <li><button class="jp-play"><span class="icon-play"></span><span class="visuallyhidden">Play</span></button></li>
+                            <li><button class="jp-pause"><span class="icon-pause"></span><span class="visuallyhidden">Pause</span></button></li>
+                            <li><button class="jp-next"><span class="icon-seek-right"></span><span class="visuallyhidden">Next</span></button></li>
 
-            <div class="jp-playlist">
-                <ul>
-                    <!-- The method Playlist.displayPlaylist() uses this unordered list -->
-                    <li></li>
-                </ul>
-            </div><!-- .jp-playlist -->
+                            <!-- these were not specificed in the design.. but should maybe be present?
+                            <li class="visuallyhidden"><button class="jp-stop">Stop</button></li>
+                            <li class="visuallyhidden"><button class="jp-mute" title="mute">Mute</button></li>
+                            <li class="visuallyhidden"><button class="jp-unmute" title="unmute">Unmute</button></li>
+                            <li class="visuallyhidden"><button class="jp-volume-max" title="max volume">Max Volume</button></li>
+                            -->
+                        </ul><!-- jp-controls -->
 
-            <div class="jp-no-solution">
-                <span>Update Required</span>
-                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash Plugin</a>.
-            </div><!-- .jp-no-solution -->
+                        <!-- not displayed in the design.. again, possibly good controls?
+                        <ul class="jp-toggles">
+                            <li><button class="jp-repeat" title="repeat">Repeat</button></li>
+                            <li><button class="jp-repeat-off" title="repeat off">Repeat Off</button></li>
+                        </ul> .jp-toggles -->
+
+                    </div><!-- .jp-gui -->
+
+                </div><!-- .Grid-cell -->
+
+                <div class="Grid-cell">
+
+                    <div class="jp-playlist">
+                        <ul>
+                            <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+                            <li></li>
+                        </ul>
+                    </div><!-- .jp-playlist -->
+
+                </div><!-- .Grid-cell -->
+
+                <div class="Grid-cell">
+
+                    <div class="jp-no-solution">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash Plugin</a>.
+                    </div><!-- .jp-no-solution -->
+
+                </div><!-- .Grid-cell -->
+
+            </div><!-- .Grid -->
 
         </div><!-- jp-type-single -->
 
-    </div><!-- #jp_container_1 -->
+    </div><!-- #js-APlayer-container -->
 
 </div><!-- .APlayer -->

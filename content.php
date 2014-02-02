@@ -22,17 +22,26 @@
 
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
-                <h1 class="Posts-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+                <h1 class="Posts-post-title  h2"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-                <?php if ( 'audio' == get_post_format() ) : ?>
-                    <button class="js-playPost" data-id="<?php the_ID(); ?>">Play post</button>
-                <?php endif; ?>
+                <div class="Grid">
 
-                <?php if ( 'post' == get_post_type() ) : ?>
-                    <div class="entry-meta">
-                        <?php undone_posted_on(); ?>
-                    </div><!-- .entry-meta -->
-                <?php endif; ?>
+                    <?php if ( 'audio' == get_post_format() ) : ?>
+                        <div class="Grid-cell  u-size1of2">
+                            <button class="js-playPost  Post-play" data-id="<?php the_ID(); ?>"><span class="icon-play"></span><span class="visuallyhidden">Play post</span></button>
+                            <button class="js-pausePost  Post-play" data-id="<?php the_ID(); ?>"><span class="icon-pause"></span><span class="visuallyhidden">Pause</span></button>
+                        </div><!-- .Grid-cell -->
+                    <?php endif; ?>
+
+                    <?php if ( 'post' == get_post_type() ) : ?>
+                        <div class="Grid-cell  u-size1of2">
+                            <div class="Post-meta">
+                                <?php undone_posted_on(); ?>
+                            </div><!-- .Post-meta -->
+                        </div><!-- .Grid-cell -->
+                    <?php endif; ?>
+
+                </div><!-- .Grid -->
 
             </header><!-- .entry-header -->
 
@@ -84,9 +93,11 @@
 
                 <?php endif; // End if 'post' == get_post_type() ?>
 
-                <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-                <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'undone' ), __( '1 Comment', 'undone' ), __( '% Comments', 'undone' ) ); ?></span>
-                <?php endif; ?>
+                <!--
+                <?php // if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+                <span class="comments-link"><?php // comments_popup_link( __( 'Leave a comment', 'undone' ), __( '1 Comment', 'undone' ), __( '% Comments', 'undone' ) ); ?></span>
+                <?php // endif; ?>
+                -->
 
             </footer><!-- .entry-meta -->
 
