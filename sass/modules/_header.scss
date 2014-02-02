@@ -1,0 +1,13 @@
+.Header {
+    padding-top: 2.5em;
+    padding-bottom: 2em;
+    background-color: #fff;
+    width: 100%;
+}
+
+@media only screen and (min-width: 38em) {
+    .Header.is-fixed {
+        position: fixed;
+        z-index: 99;
+    }
+}

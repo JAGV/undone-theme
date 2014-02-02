@@ -1,0 +1,46 @@
+/*
+ * Grid setup
+ */
+
+.Grid {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.Grid-cell {
+    font-size: 16px;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+
+/*
+ * Grid Modifiers
+ */
+
+.Grid--gutters {
+    margin-left: -24px !important;
+    margin-left: -1.5rem !important;
+}
+
+.Grid--gutters > .Grid-cell {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 24px;
+    padding-left: 1.5rem;
+}
+
+
+/*
+ * Responsive versions of the grid
+ */
+
+@media only screen and (min-width: 26em) {
+    .v1-Grid--2col > .Grid-cell { width: 50%; }
+    .v1-Grid--3col > .Grid-cell { width: 33.3333%; }
+    .v1-Grid--6col > .Grid-cell { width: 16.6666%; }
+}

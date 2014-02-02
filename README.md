@@ -1,43 +1,63 @@
-_s
-===
+# Undone Theme
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Wordpress theme plugin dependancies
+- [Advanced Ajax Page Loader](http://wordpress.org/plugins/advanced-ajax-page-loader/)
+- [Advanced Custom Fields](http://www.advancedcustomfields.com/)
+- [json API](http://wordpress.org/plugins/json-api/)
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+Undone theme header
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+```CSS
+/*
+Theme Name: Undone
+Theme URI: http://underscores.me/
+Author: Justin Alm & Grey Vaisius
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Text Domain: undone
+Domain Path: /languages/
+Tags:
 
-Getting Started
----------------
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+ Undone is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+```
 
-If you want to set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else - Like, say, `megatherium` - then you'll need to do a five-step find and replace on the name in all the templates.
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-4. Search for `_s-` to capture prefixed handles.
-5. Search for `Text Domain: _s` in style.css.
+## References
 
-OR
+### jPlayer
+- [jPlayer quickstart guide](http://www.jplayer.org/latest/quick-start-guide/)
+- [jPlayer audioplayer ](http://www.jplayer.org/latest/demo-01/?theme=0)
+- [jPlayer with jquery UI](http://www.jplayer.org/latest/demo-07/)
+- [jPlayer text based player](http://www.jplayer.org/latest/demo-04/)
+- [jPlayer as video playlist player](http://www.jplayer.org/latest/demo-02-video/)
+- [jPlayer API reference](http://www.jplayer.org/latest/developer-guide/#jPlayer-play)
+- [jPlayer add javascript for audio](http://www.jplayer.org/latest/quick-start-guide/step-7-audio/)
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
+### Wordpress
+- [Wordpress get URL from ID](http://codex.wordpress.org/Function_Reference/get_permalink)
+- [Wordpress JSON-API plugin docs](http://wordpress.org/plugins/json-api/other_notes/)
+- [Wordpress plugin API actions & filters](http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters)
+- [Wordpress API add_filter](http://codex.wordpress.org/Function_Reference/add_filter)
+- [Wordpress API post formats](http://codex.wordpress.org/Post_Formats)
 
-Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
+### Advanced Custom Fields
+- [API documentation for get_field](http://www.advancedcustomfields.com/resources/functions/get_field/)
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+### Requirejs
+- [RequireJS and wordpress jQuery](http://kaidez.com/requirejs-wordpress/#jquery-requirejs-wordpress)
 
-Good luck!
+### Wordpress add_filter
+- [Wordpress add_filter on themeblvd](http://dev.themeblvd.com/tutorial/incorporating-post-formats/)
+- [Yoast on custom post-types](http://yoast.com/custom-post-type-snippets/)
+- [Using wordpress add_filter](http://programming-review.com/add_filter-hook/)
+- [Getting started with wordpress post-types](http://webdesignledger.com/tips/getting-started-with-wordpress-post-formats)
+- [Custom URLS for post-formats](http://justintadlock.com/archives/2012/09/11/custom-post-format-urls)
+
+### Helpful
+- [Localhost JSON-API return URL](http://localhost:8888/undone.ca/api/get_recent_posts/)

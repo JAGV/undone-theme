@@ -1,0 +1,12 @@
+.Nav {
+    list-style: none;
+    padding-left: 0;
+}
+
+.Nav > li {
+    display: inline-block;
+    margin-left: 1em;
+    &:first-child {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,17 @@
+.Logo {
+    transition: opacity 0.5s;
+    text-align: center;
+}
+
+.Logo--pushEnds {
+    margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 38em) {
+    .Logo--pushEnds { margin-top: 10em; }
+}
+
+.Logo.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+}

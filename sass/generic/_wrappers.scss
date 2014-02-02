@@ -1,0 +1,35 @@
+/*
+ * Site wrapper
+ */
+
+.WrapSite {
+    box-sizing: border-box;
+    max-width: 70em;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: $grey;
+}
+
+
+/*
+ * Content wrappers
+ */
+
+.WrapContent {
+    max-width: 70em;
+    margin: 0 auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.Content {
+    max-width: 45em;
+    margin: 0 auto;
+}
+
+.Content--main {
+    box-sizing: border-box;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    background-color: $white;
+}
