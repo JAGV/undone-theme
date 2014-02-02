@@ -19,7 +19,7 @@ get_header(); ?>
 
         <div class="Posts">
 
-            <div class="Grid  Grid--gutters">
+            <div class="Grid  Grid--gutters  v1-Grid--1over2">
 
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>

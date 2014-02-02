@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-size: 1em;
+    font-size: 100%;
     font-family: $font-family--1;
     line-height: 1.6;
     color: $d-grey;
@@ -26,10 +26,6 @@ a {
     &:hover {
         color: $d-grey;
     }
-
-    // &:visited {
-    //     color: $l-grey;
-    // }
 }
 
 hr {

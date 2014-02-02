@@ -121,7 +121,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 html { font-size: 100%; }
 
-body { font-size: 1em; font-family: "Georgia", "Times New Roman", "Times", serif; line-height: 1.6; color: #a6a6a6; }
+body { font-size: 100%; font-family: "Georgia", "Times New Roman", "Times", serif; line-height: 1.6; color: #a6a6a6; }
 
 ::-moz-selection { background: #e5e5e5; text-shadow: none; }
 
@@ -163,6 +163,8 @@ h6, .h6 { font-size: 0.67em; }
 
 blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
+p { font-size: 0.875em; }
+
 .timestamp { font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
 @font-face { font-family: 'undone'; src: url("assets/icons/undone.eot?-18rcmg"); src: url("assets/icons/undone.eot?#iefix-18rcmg") format("embedded-opentype"), url("assets/icons/undone.woff?-18rcmg") format("woff"), url("assets/icons/undone.ttf?-18rcmg") format("truetype"), url("assets/icons/undone.svg?-18rcmg#undone") format("svg"); font-weight: normal; font-style: normal; }
@@ -195,10 +197,15 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .Grid--gutters > .Grid-cell { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-left: 24px; padding-left: 1.5rem; }
 
+.Grid--verticalAlignMiddle > .Grid-cell { vertical-align: middle; }
+
 /* Responsive versions of the grid */
 @media only screen and (min-width: 26em) { .v1-Grid--2col > .Grid-cell { width: 50%; }
   .v1-Grid--3col > .Grid-cell { width: 33.3333%; }
-  .v1-Grid--6col > .Grid-cell { width: 16.6666%; } }
+  .v1-Grid--6col > .Grid-cell { width: 16.6666%; }
+  /* The main blog grid */
+  .v1-Grid--1over2 > .Grid-cell--1 { width: 100%; }
+  .v1-Grid--1over2 > .Grid-cell--2 { width: 50%; } }
 .u-block { display: block; }
 
 .u-inline { display: inline; }
@@ -229,11 +236,13 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 .Nav > li:first-child { margin-left: 0; }
 
 /* Site wrapper */
-.WrapSite { box-sizing: border-box; max-width: 70em; margin: 0 auto; padding: 2em; background-color: #f6f6f6; }
+.WrapSite { box-sizing: border-box; max-width: 70em; margin: 0 auto; background-color: #f6f6f6; }
 
+@media only screen and (min-width: 26em) { .WrapSite { padding: 2em; } }
 /* Content wrappers */
-.WrapContent { max-width: 70em; margin: 0 auto; padding-left: 2em; padding-right: 2em; }
+.WrapContent { max-width: 70em; margin: 0 auto; padding-left: 1.5em; padding-right: 1.5em; }
 
+@media only screen and (min-width: 26em) { .WrapContent { padding-left: 2em; padding-right: 2em; } }
 .Content { max-width: 45em; margin: 0 auto; }
 
 .Content--main { box-sizing: border-box; padding: 1.5em; margin-bottom: 2em; background-color: white; }
@@ -241,8 +250,10 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 .Header { padding-top: 2.5em; padding-bottom: 2em; background-color: #fff; width: 100%; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
 @media only screen and (min-width: 38em) { .Header.is-fixed { position: fixed; z-index: 99; } }
-.Footer { padding-bottom: 4em; }
+.Footer { padding: 0 1.5em 4em; }
 
+/* Ideally this is handled by a wrapper instead */
+@media only screen and (min-width: 26em) { .Footer { padding-left: 0; padding-right: 0; } }
 .Logo { transition: opacity 0.5s; text-align: center; }
 
 .Logo--pushEnds { margin-bottom: 2em; }
@@ -308,19 +319,29 @@ blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "
 
 .Posts-post { margin-bottom: 1.5em; }
 
+.Posts-post a { color: #a6a6a6; transition: color 0.5s; }
+
+.Posts-post a:hover { color: #000; }
+
 .Posts-post--featured { text-align: center; }
 
 .Posts-post-title { margin-top: 1em; margin-bottom: 0.5em; }
+
+.Post-play { padding: 0; }
+
+.Post-play { color: #a6a6a6; transition: color 0.5s; }
+
+.Post-play:hover { color: #000; }
+
+.Post-play:focus { outline: 0; }
+
+.Post-meta { text-align: right; }
 
 .sticky { text-align: center; }
 
 .sticky .Post-meta { text-align: center; }
 
-.Post-play { padding: 0; }
-
-.Post-play:focus { outline: 0; }
-
-.Post-meta { text-align: right; }
+.sticky .Posts-post-title { max-width: 20em; margin: 1em auto 0.5em; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }

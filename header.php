@@ -29,7 +29,7 @@
 
         <div class="WrapContent">
 
-            <div class="Grid  Grid--gutters  v1-Grid--3col">
+            <div class="Grid  Grid--verticalAlignMiddle  Grid--gutters  v1-Grid--3col">
 
                 <div class="Grid-cell">
 

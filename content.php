@@ -6,11 +6,11 @@
 
 <?php if ( is_sticky()  ) : ?>
 
-    <div class="Grid-cell">
+    <div class="Grid-cell  Grid-cell--1">
 
     <?php else : ?>
 
-    <div class="Grid-cell  u-size1of2">
+    <div class="Grid-cell  Grid-cell--2">
 
 <?php endif; ?>
 
@@ -50,6 +50,10 @@
                 <div class="entry-summary">
                     <?php the_excerpt(); ?>
                 </div><!-- .entry-summary -->
+
+            <?php elseif ( is_sticky() ) : ?>
+
+                <!-- do nothing -->
 
             <?php else : ?>
                 <div class="entry-content">

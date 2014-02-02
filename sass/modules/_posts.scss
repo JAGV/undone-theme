@@ -8,6 +8,15 @@
     margin-bottom: 1.5em;
 }
 
+.Posts-post a {
+    color: #a6a6a6;
+    transition: color 0.5s;
+}
+
+.Posts-post a:hover {
+    color: #000;
+}
+
 .Posts-post--featured {
     text-align: center;
 }
@@ -17,16 +26,17 @@
     margin-bottom: 0.5em;
 }
 
-.sticky {
-    text-align: center;
-}
-
-.sticky .Post-meta {
-    text-align: center;
+.Post-play {
+    padding: 0;
 }
 
 .Post-play {
-    padding: 0;
+    color: #a6a6a6;
+    transition: color 0.5s;
+}
+
+.Post-play:hover {
+    color: #000;
 }
 
 .Post-play:focus {
@@ -35,4 +45,18 @@
 
 .Post-meta {
     text-align: right;
+}
+
+
+.sticky {
+    text-align: center;
+}
+
+.sticky .Post-meta {
+    text-align: center;
+}
+
+.sticky .Posts-post-title {
+    max-width: 20em;
+    margin: 1em auto 0.5em;
 }

@@ -34,6 +34,10 @@
     padding-left: 1.5rem;
 }
 
+.Grid--verticalAlignMiddle > .Grid-cell {
+    vertical-align: middle;
+}
+
 
 /*
  * Responsive versions of the grid
@@ -43,4 +47,9 @@
     .v1-Grid--2col > .Grid-cell { width: 50%; }
     .v1-Grid--3col > .Grid-cell { width: 33.3333%; }
     .v1-Grid--6col > .Grid-cell { width: 16.6666%; }
+
+    /* The main blog grid */
+    .v1-Grid--1over2 > .Grid-cell--1 { width: 100%; }
+    .v1-Grid--1over2 > .Grid-cell--2 { width: 50%; }
 }
+

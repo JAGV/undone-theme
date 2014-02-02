@@ -81,6 +81,10 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
 
             $.subscribe("playSong", function(u, id) {
                 _this.undonePlaylist.play(_this.findSong(id));
+                var current = _this.undonePlaylist.current;
+                console.log('#' + _this.undonePlaylist.playlist[current].id + ' post is playing');
+
+                //(_this.undonePlaylist.current)
             });
 
             $.subscribe("pauseSong", function(u, id) {

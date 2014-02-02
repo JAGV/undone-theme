@@ -57,6 +57,6 @@
             );
         ?>
 
-        <?php edit_post_link( __( 'Edit', 'undone' ), '<span class="edit-link">', '</span>' ); ?>
+        <?php // edit_post_link( __( 'Edit', 'undone' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-meta -->
 </article><!-- #post-## -->
