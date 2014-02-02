@@ -1,5 +1,6 @@
 
-define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.pubsub"], function(jQuery, _, jPlayer, jPlayerPlaylist, pubSub ){
+define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.pubsub"],
+    function(jQuery, _, jPlayer, jPlayerPlaylist, pubSub ){
 
     return {
 
@@ -42,16 +43,14 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
 
         playPost: function() {
             var $this = $(this),
-                id = $this.data('id'),
-                playerObj = Undone.player;
+                id = $this.data('id');
 
-            if(playerObj.findSong(id) !== null) {
-                playerObj.undonePlaylist.play(playerObj.findSong(id));
-            }
+            $.publish("playSong", [id]);
         },
 
         init: function(config) {
 
+            // Create an internal reference to this
             var _this = this;
 
             _this.undonePlaylist = new jPlayerPlaylist({
@@ -70,6 +69,9 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
             $.getJSON(_this.config.jsonURL, _this.createSonglist);
             $.subscribe("playlistMade", function(u, obj) {
                 _.each(obj, function(i) { _this.undonePlaylist.add(i); });
+            });
+            $.subscribe("playSong", function(u, id) {
+                _this.undonePlaylist.play(_this.findSong(id));
             });
             _this.config.$body.on('click', '.js-playPost', _this.playPost);
         }

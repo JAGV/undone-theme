@@ -34,7 +34,9 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
-            <?php undone_paging_nav(); ?>
+            <div class="Grid-cell">
+                <?php undone_paging_nav(); ?>
+            </div><!-- .Grid-cell -->
 
         <?php else : ?>
 
