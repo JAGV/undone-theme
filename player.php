@@ -29,12 +29,13 @@
 
                 <div class="jp-time-holder">
                     <div class="jp-current-time"></div>
-                    <div class="jp-duration"></div>
-                    <ul class="jp-toggles">
-                        <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">Repeat</a></li>
-                        <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">Repeat Off</a></li>
-                    </ul><!-- .jp-toggles -->
+                    <div class="jp-duration"></div>                    
                 </div><!-- .jp-time-holder -->
+
+                <ul class="jp-toggles">
+                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">Repeat</a></li>
+                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">Repeat Off</a></li>
+                </ul><!-- .jp-toggles -->
 
             </div><!-- .jp-gui -->
 

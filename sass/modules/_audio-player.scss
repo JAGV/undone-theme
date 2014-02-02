@@ -2,3 +2,70 @@
     overflow: hidden;
     max-height: 0;
 }
+
+.jp-controls {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.jp-controls > li {
+    display: inline-block;
+    padding: 0.5em;
+    border: 1px solid;
+}
+
+.jp-progress {
+    background-color: #000;
+    height: 0.5em;
+}
+
+.jp-play-bar {
+    background-color: #e5e5e5;
+    height: 0.5em;
+}
+
+.jp-volume-bar {
+    background-color: #e5e5e5;
+    height: 0.5em;
+    width: 40%;
+}
+
+.jp-volume-bar-value {
+    background-color: #999;
+    height: 0.5em;
+}
+
+.jp-time-holder {
+    overflow: hidden;
+}
+
+.jp-current-time {
+    float: left;
+}
+
+.jp-duration {
+    float: right;
+}
+
+.jp-toggles {
+    padding-left: 0;
+    list-style: none;
+}
+
+.jp-playlist {
+    background-color: #e5e5e5;
+    padding: 1em 1em 2em;
+}
+
+.jp-playlist ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.jp-playlist ul > li {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid;
+}

@@ -42,7 +42,7 @@
                 <div class="Grid-cell">
 
                     <div class="Logo  is-hidden" id="js-hiddenLogo">
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://fakeimg.pl/60" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://fakeimg.pl/60" alt="<?php bloginfo( 'name' ); ?>"></a>
                     </div><!-- .Logo -->
 
                 </div><!-- .Grid-cell -->
@@ -51,9 +51,8 @@
 
                     <div class="Search">
                         <?php get_search_form(); ?>
+                        <button id="js-APlayer-trigger">Audio Player</button>
                     </div><!-- .Search -->
-
-                    <button id="js-APlayer-trigger">Audio Player</button>
 
                 </div><!-- .Grid-cell -->
 
