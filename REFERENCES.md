@@ -19,6 +19,9 @@
 ## Advanced Custom Fields
 - [API documentation for get_field](http://www.advancedcustomfields.com/resources/functions/get_field/)
 
+## Requirejs
+- [RequireJS and wordpress jQuery](http://kaidez.com/requirejs-wordpress/#jquery-requirejs-wordpress)
+
 ## Wordpress add_filter
 - [Wordpress add_filter on themeblvd](http://dev.themeblvd.com/tutorial/incorporating-post-formats/)
 - [Yoast on custom post-types](http://yoast.com/custom-post-type-snippets/)
@@ -28,3 +31,4 @@
 
 ## Helpful
 - [Localhost JSON-API return URL](http://localhost:8888/undone.ca/api/get_recent_posts/)
+

@@ -1,21 +1,22 @@
-var Undone = Undone || {};
 
-Undone.togglePlayer = {
+define(["jquery"], function(jQuery) {
+    return {
 
-    config: {
-        $toggle: $('#js-APlayer-trigger'),
-        $player: $('#js-PlayerDrawer')
-    },
+        config: {
+            $toggle: $('#js-APlayer-trigger'),
+            $player: $('#js-PlayerDrawer')
+        },
 
-    init: function(config) {
+        init: function(config) {
 
-        var root = this.config,
-            $toggle = root.$toggle,
-            $player = root.$player;
+            var root = this.config,
+                $toggle = root.$toggle,
+                $player = root.$player;
 
-        $toggle.on('click', function() {
-            $player.toggleClass('is-hidden');
-        });
-    }
+            $toggle.on('click', function() {
+                $player.toggleClass('is-hidden');
+            });
+        }
 
-};
+    };
+});

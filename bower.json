@@ -15,9 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "jplayer": "~2.5.4"
-  },
-  "devDependencies": {
-    "lodash": "~2.4.1"
+    "jplayer": "~2.5.4",
+    "lodash": "~2.4.1",
+    "requirejs": "~2.1.10"
   }
 }

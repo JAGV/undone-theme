@@ -34,6 +34,7 @@
 </div><!-- .page (opened in header.php) -->
 
 <?php wp_footer(); ?>
+<script data-main="<?php bloginfo('template_directory') ?>/js/script.js" src="<?php bloginfo('template_directory') ?>/bower_components/requirejs/require.js"></script>
 
 </body>
 </html>
