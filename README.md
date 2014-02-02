@@ -19,12 +19,13 @@ License: GNU General Public License
 License URI: license.txt
 Text Domain: undone
 Domain Path: /languages/
-Tags:
+Tags: minimal, music
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
  Undone is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+ */
 ```
 
 
