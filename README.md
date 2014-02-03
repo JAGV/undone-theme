@@ -39,6 +39,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 - [jPlayer as video playlist player](http://www.jplayer.org/latest/demo-02-video/)
 - [jPlayer API reference](http://www.jplayer.org/latest/developer-guide/#jPlayer-play)
 - [jPlayer add javascript for audio](http://www.jplayer.org/latest/quick-start-guide/step-7-audio/)
+- [jPlayer API reference events](http://jplayer.org/latest/developer-guide/#jPlayer-event-use)
+- [jPlayer events](https://gist.github.com/dyaa/6764748)
+- [jPlayer setting height and width (didn't work)](http://stackoverflow.com/questions/9248805/how-to-set-width-and-height-to-jplayer)
 
 ### Wordpress
 - [Wordpress get URL from ID](http://codex.wordpress.org/Function_Reference/get_permalink)
@@ -59,6 +62,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 - [Using wordpress add_filter](http://programming-review.com/add_filter-hook/)
 - [Getting started with wordpress post-types](http://webdesignledger.com/tips/getting-started-with-wordpress-post-formats)
 - [Custom URLS for post-formats](http://justintadlock.com/archives/2012/09/11/custom-post-format-urls)
+
+### Fonts
+- [Fallbacks for icon fonts](https://github.com/filamentgroup/a-font-garde)
+
+### Underscore
+- [Finding the difference in two arrays](http://stackoverflow.com/questions/13147278/using-underscores-difference-method-on-objects)
 
 ### Helpful
 - [Localhost JSON-API return URL](http://localhost:8888/undone.ca/api/get_recent_posts/)

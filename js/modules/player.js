@@ -1,18 +1,18 @@
 
 define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.pubsub"],
-    function(jQuery, _, jPlayer, jPlayerPlaylist, pubSub ){
+    function( jQuery, _, jPlayer, jPlayerPlaylist, pubSub ){
 
     return {
 
         config: {
-            $player: $('#js-APlayer'),
+            $player: '#js-APlayer',
             $body: $('body'),
-            jsonURL: 'http://localhost:8888/undone.ca/api/get_recent_posts/'
+            jsonURL: 'http://localhost:8888/undone.ca/api/get_posts/'
         },
 
         createSonglist: function(data) {
 
-            var songPosts = _.where(data.posts, {"format": "audio"}),
+            var songPosts = data.posts ? _.where(data.posts, {"format": "audio"}) : data,
                 playlistData = [];
 
             _.each(songPosts, function(i) {
@@ -22,7 +22,7 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
                         title: i.title,
                         artist: i.custom_fields.artist,
                         mp3: i.song_mp3,
-                        poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+                        poster: i.thumbnail
                     });
                 }
             }, songPosts);
@@ -62,8 +62,9 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
             var _this = this;
 
             _this.undonePlaylist = new jPlayerPlaylist({
-                    jPlayer: _this.config.$player,
-                    cssSelectorAncestor: "#js-APlayer-container"
+                    jPlayer: "#js-APlayer",
+                    cssSelectorAncestor: "#js-APlayer-container",
+                    size: { width: '200px', height: '200px' }
                 }, {
                     playlistOptions: {
                         enableRemoveControls: false
@@ -71,7 +72,8 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
                     swfPath: "undone.ca/wp-content/themes/undone/bower_components/jplayer/jquery.jplayer/Jplayer.swf",
                     supplied: "mp3, m4a, oga",
                     smoothPlayBar: true,
-                    keyEnabled: true
+                    keyEnabled: true,
+                    audioFullScreen: true
             });
 
             $.getJSON(_this.config.jsonURL, _this.createSonglist);
@@ -81,20 +83,49 @@ define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.
 
             $.subscribe("playSong", function(u, id) {
                 _this.undonePlaylist.play(_this.findSong(id));
+
+                // nonsense to make the current post display that it is playing.
                 var current = _this.undonePlaylist.current;
                 console.log('#' + _this.undonePlaylist.playlist[current].id + ' post is playing');
-
-                //(_this.undonePlaylist.current)
             });
 
             $.subscribe("pauseSong", function(u, id) {
-                _this.undonePlaylist.pause(_this.findSong(id));
+                _this.undonePlaylist.pause();
             });
 
             $.subscribe("playlistMade", function(u, obj) {
                 _.each(obj, function(i) { _this.undonePlaylist.add(i); });
             });
 
+
+            // Everything below here is a godawful mess
+            $('.jp-current-info .jp-current-artist').html('Artist');
+            $('.jp-current-info .jp-current-track').html('Track');
+
+            $("#js-APlayer").bind($.jPlayer.event.play, function(event){
+                var currentArtist = _this.undonePlaylist.playlist[_this.undonePlaylist.current].artist;
+                var currentTrack = _this.undonePlaylist.playlist[_this.undonePlaylist.current].title;
+                var currentArtistContainer = $('.jp-current-info .jp-current-artist');
+                var currentTrackContainer = $('.jp-current-info .jp-current-track');
+
+                currentArtistContainer.html(currentArtist);
+                currentTrackContainer.html(currentTrack);
+
+            });
+
+            $('body').on('click', '.nav-links a', function(event) {
+                var $this = $(this),
+                    link = $this.attr('href') + '&json=1',
+                    currentSongs = _this.undonePlaylist.playlist;
+
+                $.getJSON(link, function(data){
+                    var songs = _.where(data.posts, {"format": "audio"}),
+                        diff = _.difference(_.pluck(songs, "id"), _.pluck(currentSongs, "id")),
+                        result = _.filter(songs, function(obj) {return diff.indexOf(obj.id) >= 0; });
+
+                    _this.createSonglist(result);
+                });
+            });
         }
     };
 });

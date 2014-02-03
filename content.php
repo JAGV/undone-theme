@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php if ( is_sticky()  ) : ?>
+<?php if ( is_sticky() ) : ?>
 
     <div class="Grid-cell  Grid-cell--1">
 
@@ -22,7 +22,13 @@
 
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
+                <?php if ( is_sticky() ) : ?>
                 <h1 class="Posts-post-title  h2"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
+                <?php else : ?>
+                <h1 class="Posts-post-title  h3"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
+                <?php endif; ?>
 
                 <div class="Grid">
 

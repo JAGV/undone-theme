@@ -269,6 +269,18 @@ p { font-size: 0.875em; }
 
 .Player-trigger { outline: 1px solid #e5e5e5; }
 
+/* Hacks to get the image to display... this shouldn't really be a thing would be nice to find a better way */
+.jp-type-playlist { height: 10em; position: relative; padding-left: 10.5em; }
+
+.jp-jplayer { width: 10em !important; height: auto !important; position: absolute; left: 0; }
+
+.jp-jplayer img { width: 10em !important; height: 10em !important; }
+
+/* A melange of styles... */
+.jp-current-info { text-align: center; padding-top: 0.5em; padding-bottom: 1em; }
+
+.jp-current-track { color: #000; }
+
 .jp-audio { border: 1px solid #e5e5e5; padding: 0.25em; margin: 1em 1em 0; }
 
 .jp-controls { margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 0; list-style: none; font-size: 2em; text-align: center; }
@@ -307,9 +319,9 @@ p { font-size: 0.875em; }
 
 .jp-toggles { padding-left: 0; list-style: none; }
 
-.jp-playlist { font-size: 0.875em; }
+.jp-playlist { max-height: 10em; overflow-y: scroll; }
 
-.jp-playlist ul { margin: 0; padding-left: 0; list-style: none; }
+.jp-playlist ul { margin: 0; padding-left: 0; list-style: none; font-size: 0.875em; }
 
 .jp-playlist ul > li { padding: 0.25em; border-bottom: 1px solid #f5f5f5; }
 
