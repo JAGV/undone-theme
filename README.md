@@ -5,6 +5,22 @@
 - [Advanced Custom Fields](http://www.advancedcustomfields.com/)
 - [json API](http://wordpress.org/plugins/json-api/)
 
+## Minimum Config
+You need to have all the above wordpress plugins installed and active in order to run this theme properly. In addition you need to set up the proper custom fields.
+
+Once Advance Custom Fields is installed go to "Custom Fields" in the left hand sidebar (when logged into wordpress admin).
+
+Add a new field group, I called my "Music posts", but I'm pretty sure it can be anything. From there add two fields:
+
+"Artist" -> "Field Name": artist, "Field Type": Text
+"MP3" -> "Field Name": mp3, "Field Type": File, "Return Value": File URL
+
+Permalinks should be set to Post name (under Settings > Permalinks).
+
+### Adding posts
+
+To add new tracks to the player make normal posts under "Posts". This should be "Audio" under the "Format" panel on the right side of the post window. They take the "Artist" and "MP3" custom field, and a featured image of 450x450.
+
 Undone theme header
 
 ```CSS
