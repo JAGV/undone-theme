@@ -1,13 +1,13 @@
 
 define(["jquery", "lodash", "jquery.jplayer", "jquery.jplayerplaylist", "jquery.pubsub"],
-    function( jQuery, _, jPlayer, jPlayerPlaylist, pubSub ){
+    function( $, _, jPlayer, jPlayerPlaylist, pubSub ) {
 
     return {
 
         config: {
             $player: '#js-APlayer',
             $body: $('body'),
-            jsonURL: 'http://localhost:8888/undone.ca/api/get_posts/'
+            jsonURL: window.location.origin + '/undone.ca/api/get_posts/'
         },
 
         createSonglist: function(data) {

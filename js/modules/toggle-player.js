@@ -1,5 +1,5 @@
 
-define(["jquery"], function(jQuery) {
+define(["jquery"], function($) {
     return {
 
         config: {

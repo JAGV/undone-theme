@@ -1,5 +1,5 @@
 
-define(["jquery"], function(jQuery) {
+define(["jquery"], function($) {
     return {
         config: {
             // This needs to be changed to not rely on selectors used in CSS
