@@ -30,6 +30,5 @@ require(["player", "fade-logo", "toggle-player"], function(player, fadeLogo, tog
     togglePlayer.init();
     fadeLogo.init();
     player.init();
-    console.log('Web hooks in da mix');
 
 });

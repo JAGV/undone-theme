@@ -149,17 +149,17 @@ button:focus { outline: 2px solid #e5e5e5; }
 
 h1, h2, h3, h4, h5, h6 { margin-top: 0; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
-h1, .h1 { font-size: 2em; line-height: 1.1; }
+h1, .as-h1 { font-size: 2em; line-height: 1.1; }
 
-h2, .h2 { font-size: 1.5em; line-height: 1.1; }
+h2, .as-h2 { font-size: 1.25em; line-height: 1.1; font-weight: 600; }
 
-h3, .h3 { font-size: 1.17em; }
+h3, .as-h3 { font-size: 1.17em; font-weight: 600; }
 
-h4, .h4 { font-size: 1em; }
+h4, .as-h4 { font-size: 1em; }
 
-h5, .h5 { font-size: 0.83em; }
+h5, .as-h5 { font-size: 0.83em; }
 
-h6, .h6 { font-size: 0.67em; }
+h6, .as-h6 { font-size: 0.67em; }
 
 blockquote, .blockquote { text-align: center; margin-bottom: 2em; font-family: "Avenir", "Helvetica Neue", "Helvetica", Arial, sans-serif; }
 
@@ -354,6 +354,7 @@ p { font-size: 0.875em; }
 .sticky .Post-meta { text-align: center; }
 
 .sticky .Posts-post-title { max-width: 20em; margin: 1em auto 0.5em; }
+.sticky .Posts-post-title a { color: #000; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }
