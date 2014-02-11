@@ -87,3 +87,4 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 ### Helpful
 - [Localhost JSON-API return URL](http://localhost:8888/undone.ca/api/get_recent_posts/)
+- [Dreamhost file upload increase](http://sxi.sabrextreme.com/dh-phpini)
